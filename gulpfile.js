@@ -1,35 +1,59 @@
 const { series, src, dest, parallel, watch } = require('gulp');
-const cleanHandle = require('gulp-clean')
 const sass = require('gulp-sass');
+const del = require('del');
+const googleWebFonts = require('gulp-google-webfonts');
 sass.compiler = require('node-sass');
 
-const clean = () => {
-    return src('dist', {read: false})
-    .pipe(cleanHandle())
-}
+const clean = () => del(['dist']);
 
 function css() {
     return src('./sass/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+        includePaths: require('node-normalize-scss').includePaths
+    }).on('error', sass.logError))
     .pipe(dest('./dist/css'));
 }
 
-function js() {
+const js = () => {
     return src('./js/**/*.js')
     .pipe(dest('./dist/js'));
+}
+const fonts = () => {
+    return src('./fonts.list')
+    .pipe(googleWebFonts({
+        fontsDir: 'fonts/',
+        cssDir: 'css/',
+        cssFilename: 'googleFonts.css',
+        relativePath: true
+
+    }))
+    .pipe(dest('./dist/'));
+}
+
+const fontawesome = () => {
+    return src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+    .pipe(dest('./dist/webfonts/'))
 }
 
 function html() {
     return src('./templates/**/*.html')
     .pipe(dest('./dist/'));
 }
+const images = () => src('./images/**/*').pipe(dest('./dist/images'));
 
-const dev = () => {
+
+const build = series(clean, parallel(html, images, fontawesome, fonts, css, js))
+
+const watchFiles = () => {
     watch('./templates/**/*.html', html)
-    watch('./sass/**/*.scss', css)
+    watch('./images/**/*', images)
+    watch('./sass/**/*.scss', css);
 }
+
+const runDev = series(build, watchFiles)
 
 exports.css = css;
 exports.clean = clean;
-exports.dev = dev;
-exports.default = series(clean, parallel(css, html, js));
+exports.runDev = runDev;
+exports.build = build;
+exports.default = build;

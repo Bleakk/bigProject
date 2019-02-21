@@ -1,6 +1,5 @@
-$orange: #ff6a40;
-$green: #1eba87;
-$gray: #8d8d8d;
+@import "variables";
+@import "mixins";
 
 .header-container{
     .header-wrapper{
@@ -30,6 +29,7 @@ $gray: #8d8d8d;
             }
             i{
                 padding: 5px;
+                
             }
         }
     }
