@@ -7,3 +7,6 @@
     display: flex;
     justify-content: space-between;
 }
+@mixin width{
+    margin: 0px 100px 0px 100px;
+}

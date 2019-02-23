@@ -1,10 +1,10 @@
 footer{
     color: white;
     background-color: $orange;
-    height: 930px;
+    height: 800px;
     .footer-wrapper{
         padding-top: 100px;
-        margin: 0px 230px 0px 230px;
+        margin: 0px 100px 0px 100px;
         display: flex;
         flex-direction: column;
 
@@ -19,7 +19,7 @@ footer{
             display: flex;
             justify-content: space-between;
             .footer-info{
-                width: 23%;
+                width: 20%;
                 div{
                     display: flex;
                     flex-direction: row;
@@ -30,7 +30,7 @@ footer{
                 }
             }
             .footer_contact-us{
-                width: 33%;
+                width: 20%;
                 color: white;
                 form{
                     display: flex;
@@ -61,6 +61,10 @@ footer{
                         color: $orange;
                     }
                 }
+
+            }
+            .footer_latest-news{
+                width: 20%;
             }
         }
         .super-footer{
