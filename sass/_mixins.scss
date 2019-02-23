@@ -7,6 +7,10 @@
     display: flex;
     justify-content: space-between;
 }
+@mixin flexSpaceAround {
+    display: flex;
+    justify-content: space-around;
+}
 @mixin width{
     margin: 0px 100px 0px 100px;
 }
