@@ -5,8 +5,9 @@
     background-color: #f9f9f9;
     .slider-wrapper{
         @include flexSpaceBetween;
-        @include width;
+        @include widthOfBlock;
         padding-top: 100px;
+        margin: 0 auto;
         .slider{
             .slider-block{
             height: 193px;
@@ -66,7 +67,7 @@
 }
 
 .about-us{
-    @include width;
+    @include widthOfBlock;
     .about{
         @include flexSpaceBetween;
         flex-direction: column;
@@ -167,6 +168,7 @@
                         background-color: $orange;
                         border-color: $orange;
                         margin-right: 30px;
+                        color: white;
                     }
                     .btn-green{
                         background-color: $green;
@@ -183,7 +185,7 @@
     .achive-container{
         @include flexSpaceAround;
         align-items: center;
-        @include width; 
+        @include widthOfBlock;
         height: 200px;
         .achive-block{
             color: white;
@@ -215,7 +217,7 @@
 }
 
 .service{
-    @include width;
+    @include widthOfBlock;
     @include flexSpaceBetween;
     flex-direction: column;
     .service-text-block{
@@ -295,7 +297,7 @@
 .case{
     background-color: #f9f9f9;
     .case-wrapper{
-        @include width;
+        @include widthOfBlock;
         .case-text-block{
             margin-bottom: 80px;
             .case-title,
@@ -385,7 +387,7 @@
     background-color: $orange;
     height: 250px;
     .email-wrapper{
-        @include width;
+        @include widthOfBlock;
         display: flex;
         @include flexSpaceAround;
         height: 100%;
@@ -439,7 +441,7 @@
     background-color: #f9f7f7;
     padding-bottom: 100px;
     .pakging_wrapper{
-        @include width;
+        @include widthOfBlock;
         .pakging_text-block{
             margin-bottom: 80px;
             display: flex;
@@ -534,7 +536,7 @@
 }
 .team{
     padding-top: 100px;
-    @include width;
+    @include widthOfBlock;
     .team-text{
         margin-bottom: 80px;
         display: flex;
@@ -616,16 +618,19 @@
         padding-bottom: 60px;
     }
 }
-
+.client2{
+    background: #ffa500;
+    opacity: 0.5;
+}
 .client{
-    opacity: 0.9;
     background-image: url('../images/Layer_531.png');
     background-position: top;
-    background-color: $orange;
     height: 610px;
+    background-color: $orange;
+
     .client-wrapper{
-        @include width;
-        
+        @include widthOfBlock;
+             
         
         .client-text{
             padding-top: 80px;
@@ -694,7 +699,7 @@
 .blog{
     background-color: #f9f9f9;
     .blog-wrapper{
-        @include width;
+        @include widthOfBlock;
         padding-top: 80px;
         margin-bottom: 50px;
     .blog-text{

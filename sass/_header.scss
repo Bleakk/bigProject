@@ -7,7 +7,7 @@
         .header{
             color: white;
             background-color: $orange;
-            @include width;
+            @include widthOfBlock;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -49,8 +49,7 @@
 
     .sub-header-container{
         background-color: #f3f5f5;
-        @include width;
-        width: 100%;
+        @include widthOfBlock;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -63,7 +62,7 @@
                 flex-direction: row;
                 list-style: none;
                 li{
-                    margin-right: 25px;
+                    margin-right: 35px;
                     color: $gray;
                     text-transform: uppercase;
                     font-size: 13px;
@@ -91,6 +90,9 @@
                 border-radius: 5px;
                 border-color: $green;
                 background-color: $green; 
+                text-transform: uppercase;
+                color: white;
+                margin-right: 20px;
                 }
             }
         }

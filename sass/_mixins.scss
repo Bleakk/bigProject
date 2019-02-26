@@ -14,3 +14,7 @@
 @mixin width{
     margin: 0px 100px 0px 100px;
 }
+@mixin widthOfBlock{
+    width: 1140px;
+    margin: 0 auto;
+}
