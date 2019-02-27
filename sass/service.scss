@@ -1,0 +1,103 @@
+@import 'main';
+
+.container{
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    .background-wrapper{
+      background-image: url('../images/pexels-photo-434139.png');
+      .background-color{
+        background-color: $green;
+        opacity: 0.9;  
+        .service-background{
+        @include widthOfBlock;
+        height: 245px;
+        @include flexCenter;
+        align-items: center;
+        opacity: 0.85;
+          h1{
+          color: #ffffff;
+          font-family: Roboto;
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 27px;
+         }
+        }
+      }
+      
+    }
+    
+    .service{
+      margin-top: 130px;
+      @include widthOfBlock;
+      .service-text{
+        @include flexCenter;
+        flex-direction: column;
+        text-align: center;
+        
+        h2{
+          color: #454547;
+          font-size: 42px;
+          font-weight: 400;
+          margin-top: 100px;
+        }
+        p{
+          margin-bottom: 80px;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 25px;
+          letter-spacing: 0.56px;
+        }
+      }
+      .service-information{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+        .information-section{
+          width: 360px;
+          height: 430px;
+          border-radius: 5px;
+          background-color: $orange;
+          margin-bottom: 30px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          img{
+            margin-top: 40px; 
+          }
+          h2{
+            color: #f9f9f9;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 27px;
+          }
+          p{
+            text-align: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 25px;
+            letter-spacing: 0.56px;
+            color: #ffffff;
+          }
+          span{
+            margin-bottom: 40px;
+            color: #ffffff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 700;
+          }
+        }
+        .green-block{
+          background-color: $green;
+        }
+        .last-section{
+          margin-bottom: 100px;
+        }
+      }
+    }
+  }
+}

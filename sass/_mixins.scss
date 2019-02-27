@@ -18,3 +18,19 @@
     width: 1140px;
     margin: 0 auto;
 }
+@mixin nameBackgroundGreen{
+    @include widthOfBlock;
+    height: 245px;
+    background-color: $green;
+    @include flexCenter;
+    align-items: center;
+    opacity: 0.85;
+}
+@mixin nameBackgroundOrange{
+    @include widthOfBlock;
+    height: 245px;
+    background-color: $orange;
+    @include flexCenter;
+    align-items: center;
+    opacity: 0.85;
+}
